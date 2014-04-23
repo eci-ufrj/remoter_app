@@ -15,13 +15,14 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="380dp" android:layout_gravity="center_horizontal|top">
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Play"
-                    android:id="@+id/button" android:layout_gravity="center_horizontal"/>
+                android:layout_height="152dp" android:layout_gravity="center_horizontal|top">
         </LinearLayout>
     </FrameLayout>
+    <Button
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/button" android:layout_gravity="center_horizontal"
+            android:onClick="playVideo"/>
 </LinearLayout>
 
