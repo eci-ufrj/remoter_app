@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">remoter</string>
+    <string name="socket_address">http://192.168.1.4:5000</string>
 </resources>

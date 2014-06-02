@@ -24,7 +24,7 @@
       <dependency>
           <groupId>com.koushikdutta.async</groupId>
           <artifactId>androidasync</artifactId>
-          <version>1.2.4</version>
+          <version>1.2.6</version>
       </dependency>
   </dependencies>
 </project>

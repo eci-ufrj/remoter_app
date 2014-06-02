@@ -19,7 +19,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="androidasync-1.2.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
-    <orderEntry type="library" name="Maven: com.koushikdutta.async:androidasync:1.2.4" level="project" />
+    <orderEntry type="library" name="Maven: com.koushikdutta.async:androidasync:1.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.android.support:support-v4:13.0.0" level="project" />
   </component>
 </module>
 
