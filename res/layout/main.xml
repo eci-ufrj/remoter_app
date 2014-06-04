@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:weightSum="1">
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="152dp" android:layout_gravity="center_horizontal|top">
-        </LinearLayout>
-    </FrameLayout>
     <Button
-            android:layout_width="218dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play"
-            android:id="@+id/button" android:layout_gravity="center_horizontal"
-            android:onClick="startAction"/>
+            android:background="@drawable/ic_action_play"
+            android:id="@+id/button"
+            android:onClick="startAction"
+            android:layout_alignTop="@+id/button2" android:layout_alignParentLeft="true"
+            android:layout_marginLeft="98dp"/>
     <Button
-            android:layout_width="206dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stop"
-            android:id="@+id/button2" android:layout_gravity="center_horizontal"
-            android:onClick="stopAction"/>
-</LinearLayout>
+            android:background="@drawable/ic_action_pause"
+            android:id="@+id/button2" android:layout_gravity="right"
+            android:layout_marginTop="93dp"
+            android:onClick="stopAction" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+            android:layout_marginRight="98dp"/>
+</RelativeLayout>
 
