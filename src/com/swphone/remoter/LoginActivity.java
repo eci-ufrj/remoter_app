@@ -34,4 +34,9 @@ public class LoginActivity extends Activity {
     public void loginWithGoogle(View view){
         this.authManager.performLogin(this);
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

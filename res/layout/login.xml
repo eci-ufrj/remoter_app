@@ -4,14 +4,30 @@
               android:background="@android:color/white"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              >
+<ImageView android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
 
+           android:background="@drawable/logo"
+            android:layout_marginTop="83dp" android:id="@+id/imageView" android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
     <Button
-            android:background="@android:color/holo_red_dark"
+            android:background="@drawable/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login with Google"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="23dp"
             android:onClick="loginWithGoogle"
-            android:id="@+id/button" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
-            android:paddingRight="5dp" android:paddingLeft="5dp"/>
+            android:id="@+id/button"
+
+
+            android:paddingRight="7dp"
+            android:paddingLeft="7dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="99dp"/>
 </RelativeLayout>
