@@ -35,6 +35,7 @@ public class RTSocket {
                         @Override
                         public void run() {
                             Toast.makeText(activity,"Peida", Toast.LENGTH_LONG);
+
                         }
                     });
 

@@ -5,13 +5,18 @@
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="14"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
-        <activity android:name="Main"
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher"
+            android:name=".RTApplication">
+        <activity android:name=".Main"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".RemoterActivity"></activity>
     </application>
 </manifest>

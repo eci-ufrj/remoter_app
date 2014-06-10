@@ -1,46 +1,58 @@
 package com.swphone.remoter;
 
+import android.accounts.AccountManager;
 import android.app.Activity;
+import android.app.Application;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-import com.koushikdutta.async.future.Future;
-import com.koushikdutta.async.future.FutureCallback;
-import com.koushikdutta.async.http.AsyncHttpClient;
-import com.koushikdutta.async.http.socketio.ConnectCallback;
-import com.koushikdutta.async.http.socketio.SocketIOClient;
-import com.koushikdutta.async.http.socketio.SocketIORequest;
-import com.swphone.remoter.network.RTSocket;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.swphone.remoter.auth.AuthManager;
+import com.swphone.remoter.auth.AuthPreferences;
+import com.swphone.remoter.auth.CachedResponseCallback;
+import com.swphone.remoter.auth.google.GoogleAuthPreferences;
 
+/**
+ * Created by yuri on 09/06/14.
+ */
 public class Main extends Activity {
-    /**
-     * Called when the activity is first created.
-     */
 
-    public RTSocket socketManager;
+    AccountManager accountManager;
+    AuthPreferences preferences;
+    
+    AuthManager authManager;
+    
+    
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.loading);
+        RTApplication app  = (RTApplication) this.getApplication();
+        this.accountManager = AccountManager.get(app);
+        this.preferences = new GoogleAuthPreferences(app,"google");
+        this.authManager = app.authManager;
 
-        this.socketManager = new RTSocket(this);
-        this.socketManager.start();
-
-    }
-
-    // Method that plays the video on the browser when the button 'Play' is touched.
-    public void startAction(View view) throws JSONException {
-        socketManager.emit("interaction","play_button");
-        Log.d("Play", "Playing");
+        authManager.getCachedLogin(getResponseCallback());
 
     }
 
-    public void stopAction(View view) throws JSONException {
-        socketManager.emit("interaction","stop_button");
-        Log.d("Stop", "Stopped");
+    public CachedResponseCallback getResponseCallback(){
+        CachedResponseCallback callback =  new CachedResponseCallback() {
+            @Override
+            public void run(int resultCode) {
+                Intent intent;
+                RTApplication app = (RTApplication) getApplication();
+                if (resultCode == AuthManager.RESULT_OK){
+                    intent = new Intent(app,RemoterActivity.class);
+                }else {
+                    intent = new Intent(app,LoginActivity.class);
+                }
+
+                startActivity(intent);
+            }
+        };
+
+        return callback;
     }
+
+
+
 }
